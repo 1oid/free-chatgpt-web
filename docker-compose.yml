@@ -6,3 +6,5 @@ services:
       - ./html:/app:ro # 将本地的html目录挂载到容器的/app目录
     command: python3 -m http.server 80
     restart: always
+    expose:
+      - 80
