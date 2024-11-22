@@ -1,9 +1,8 @@
-FROM nginx:latest
+FROM python:3.11-slim
 
-WORKDIR .
-COPY ./nginx/conf/nginx.conf /etc/nginx/nginx.conf
-COPY ./nginx/html /usr/share/nginx/html
-COPY ./nginx/logs /var/log/nginx
-COPY ./nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf
+WORKDIR /app
 
+COPY ./html/index.html .
+
+CMD ["python3", "-m", "http.server", "80"]
 EXPOSE 80
