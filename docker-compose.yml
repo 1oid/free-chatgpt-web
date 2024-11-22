@@ -1,8 +1,9 @@
-version: "3.8"
 services:
-  nginx:
-    image: nginx:latest
-    container_name: nginx_server
+  python-server:
+    image: python:3.11-slim
+    container_name: python_http_server
+    working_dir: /app
     volumes:
-      - ./html:/usr/share/nginx/html:ro
+      - ./html:/app:ro # 将本地的html目录挂载到容器的/app目录
+    command: python3 -m http.server 80
     restart: always
