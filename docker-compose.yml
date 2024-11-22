@@ -1,8 +1,8 @@
-version: '3'
+version: "3.8"
 services:
   nginx:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: free-gpt-nginx
+    image: nginx:latest
+    container_name: nginx_server
+    volumes:
+      - ./nginx/html:/usr/share/nginx/html:ro
     restart: always
