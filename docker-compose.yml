@@ -4,5 +4,5 @@ services:
     image: nginx:latest
     container_name: nginx_server
     volumes:
-      - ./nginx/html:/usr/share/nginx/html:ro
+      - ./html:/usr/share/nginx/html:ro
     restart: always
