@@ -2,7 +2,6 @@ services:
   python-server:
     image: python:3.11-slim
     container_name: python_http_server
-    working_dir: /app
     volumes:
       - ./html:/app:ro # 将本地的html目录挂载到容器的/app目录
     command: python3 -m http.server 80
