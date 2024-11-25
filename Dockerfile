@@ -2,7 +2,7 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-COPY ./html/assets ./
+COPY ./html/assets ./assets
 COPY ./html/index.html .
 RUN ls -l /app
 
